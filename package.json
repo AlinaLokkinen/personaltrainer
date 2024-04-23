@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://AlinaLokkinen.github.io/personaltrainer/",
+  "homepage": "https://alinalokkinen.github.io/personaltrainer/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
