@@ -7,7 +7,6 @@ import AddCustomer from "./AddCustomer";
 import EditCustomer from "./EditCustomer";
 import DeleteCustomer from "./DeleteCustomer";
 import { CSVLink } from "react-csv";
-import AddTraining from "./AddTraining";
 
 export default function Customers() {
 
@@ -29,8 +28,6 @@ export default function Customers() {
         {cellRenderer: (params) => 
             <DeleteCustomer deleteCustomer={deleteCustomer} params={params} />    
         },
-        // {cellRenderer: (params) => 
-        //     <AddTraining params={params} /> }
     ]);
 
     // Snackbar infomessage 
@@ -102,9 +99,6 @@ export default function Customers() {
         .catch(err => console.error(err))
     };
 
-    const saveTraining = (training) => {
-        
-    }
 
     // CSV download 
     const headers = [
