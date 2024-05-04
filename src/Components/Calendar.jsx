@@ -4,12 +4,7 @@ import { Scheduler } from "@aldabil/react-scheduler";
 
 export default function Calendar() {
 
-    const [trainings, setTrainings] = useState([{
-        id: '',
-        activity: '', 
-        date: '', 
-        duration: ''
-    }]);
+    const [trainings, setTrainings] = useState([]);
 
     const calculateEventEnd = (start, duration) => {
         // console.log(start);
@@ -17,7 +12,7 @@ export default function Calendar() {
         // console.log(startDate.getTime());
         const end = startDate.getTime() + (duration * 60000);
         const endDate = new Date(end);
-        // console.log('Start: ' + startDate + ' ' + 'End: ' + endDate);
+        console.log('Start: ' + startDate + ' ' + 'End: ' + endDate);
         return endDate;
     }
 
@@ -47,16 +42,13 @@ export default function Calendar() {
 
     return (
         <>
-            <Scheduler 
-                events={events}
-                week={{
-                    weekDays: [0, 1, 2, 3, 4, 5],
-                    weekStartOn: 6,
-                    startHour: 9,
-                    endHour: 17,
-                    step: 60
-                }}
-            />
+            {
+                trainings ? <Scheduler 
+                events={events} 
+            /> : ' '
+            
+            }
+            
         </>
     );
 }

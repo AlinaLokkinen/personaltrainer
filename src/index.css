@@ -13,7 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  display: flex;
+  justify-content: center;
+}
+
 a {
+  margin: 3px;
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
