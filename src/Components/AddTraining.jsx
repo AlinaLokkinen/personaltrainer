@@ -1,105 +1,108 @@
-import { Button, TextField } from "@mui/material";
-import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { Dialog, DialogContent, DialogTitle, DialogActions, DialogContentText } from "@mui/material";
-import { useState } from "react";
+// tämä koodi ei toiminut kuten piti ja aika loppui kesken
 
-export default function AddTraining(props) {
 
-    const [training, setTraining] = useState({
-        activity: '',
-        date: null, 
-        duration: ''
-    });
+// import { Button, TextField } from "@mui/material";
+// import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+// import { Dialog, DialogContent, DialogTitle, DialogActions, DialogContentText } from "@mui/material";
+// import { useState } from "react";
 
-    const [open, setOpen] = useState(false);
+// export default function AddTraining(props) {
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
+//     const [training, setTraining] = useState({
+//         activity: '',
+//         date: null, 
+//         duration: ''
+//     });
 
-    const handleClose = () => {
-        setOpen(false);
-    };
+//     const [open, setOpen] = useState(false);
 
-    const addTraining = () => {
-        props.saveTraining(training);
-        handleClose();
-    };
+//     const handleClickOpen = () => {
+//         setOpen(true);
+//     };
 
-    const changeDate = (date) => {
+//     const handleClose = () => {
+//         setOpen(false);
+//     };
 
-        setTraining({...training, date: date});
-    };
+//     const addTraining = () => {
+//         props.saveTraining(training);
+//         handleClose();
+//     };
 
-    const handleInputChange = (e) => {
-        setTraining({...training, [e.target.name]: e.target.value});
-    };
+//     const changeDate = (date) => {
 
-    return (
-        <>
-            <Button variant="contained"  style={{margin: 10}} onClick={handleClickOpen}>
-                Add training
-            </Button>
+//         setTraining({...training, date: date});
+//     };
 
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                PaperProps={{
-                component: 'form',
-                onSubmit: (event) => {
-                    event.preventDefault();
-                    const formData = new FormData(event.currentTarget);
-                    const formJson = Object.fromEntries(formData.entries());
-                    const email = formJson.email;
-                    console.log(email);
-                    handleClose();
-                    },
-                }}
-            >
-            <DialogTitle>New Training</DialogTitle>
+//     const handleInputChange = (e) => {
+//         setTraining({...training, [e.target.name]: e.target.value});
+//     };
 
-            <DialogContent>
-                <TextField
-                    autoFocus
-                    margin="dense"
-                    name="activity"
-                    value={training.activity}
-                    onChange={e => handleInputChange(e)}
-                    label="Activity name"
-                    fullWidth
-                    variant="standard"
-                />
-                <TextField
-                    autoFocus
-                    margin="dense"
-                    name="duration"
-                    value={training.duration}
-                    onChange={e => handleInputChange(e)}
-                    label="Duration"
-                    fullWidth
-                    variant="standard"
-                />
+//     return (
+//         <>
+//             <Button variant="contained"  style={{margin: 10}} onClick={handleClickOpen}>
+//                 Add training
+//             </Button>
+
+//             <Dialog
+//                 open={open}
+//                 onClose={handleClose}
+//                 PaperProps={{
+//                 component: 'form',
+//                 onSubmit: (event) => {
+//                     event.preventDefault();
+//                     const formData = new FormData(event.currentTarget);
+//                     const formJson = Object.fromEntries(formData.entries());
+//                     const email = formJson.email;
+//                     console.log(email);
+//                     handleClose();
+//                     },
+//                 }}
+//             >
+//             <DialogTitle>New Training</DialogTitle>
+
+//             <DialogContent>
+//                 <TextField
+//                     autoFocus
+//                     margin="dense"
+//                     name="activity"
+//                     value={training.activity}
+//                     onChange={e => handleInputChange(e)}
+//                     label="Activity name"
+//                     fullWidth
+//                     variant="standard"
+//                 />
+//                 <TextField
+//                     autoFocus
+//                     margin="dense"
+//                     name="duration"
+//                     value={training.duration}
+//                     onChange={e => handleInputChange(e)}
+//                     label="Duration"
+//                     fullWidth
+//                     variant="standard"
+//                 />
                 
 
 
-                <DialogContentText style={{marginBottom: 10, marginTop: 15}}>
-                    Date
-                </DialogContentText>
+//                 <DialogContentText style={{marginBottom: 10, marginTop: 15}}>
+//                     Date
+//                 </DialogContentText>
                 
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker name="date" value={training.date} onChange={date => changeDate(date)} />
-                </LocalizationProvider>
+//                 <LocalizationProvider dateAdapter={AdapterDayjs}>
+//                     <DatePicker name="date" value={training.date} onChange={date => changeDate(date)} />
+//                 </LocalizationProvider>
 
-            </DialogContent>
+//             </DialogContent>
 
-            <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={addTraining}>Save</Button>
-            </DialogActions>
+//             <DialogActions>
+//                 <Button onClick={handleClose}>Cancel</Button>
+//                 <Button onClick={addTraining}>Save</Button>
+//             </DialogActions>
 
-            </Dialog>
+//             </Dialog>
         
-        </>
-    );
-}
+//         </>
+//     );
+// }
