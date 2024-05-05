@@ -6,7 +6,6 @@ import Trainings from './Components/Trainings'
 import Calendar from './Components/Calendar'
 import { Routes, Route } from 'react-router-dom/dist'
 
-
 function App() {
   
   return (

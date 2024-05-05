@@ -12,7 +12,7 @@ export default function Calendar() {
         // console.log(startDate.getTime());
         const end = startDate.getTime() + (duration * 60000);
         const endDate = new Date(end);
-        console.log('Start: ' + startDate + ' ' + 'End: ' + endDate);
+        // console.log('Start: ' + startDate + ' ' + 'End: ' + endDate);
         return endDate;
     }
 
@@ -43,9 +43,9 @@ export default function Calendar() {
     return (
         <>
             {
-                trainings ? <Scheduler 
-                events={events} 
-            /> : ' '
+                trainings ? 
+                    <Scheduler 
+                    events={events} /> : ' '
             
             }
             
